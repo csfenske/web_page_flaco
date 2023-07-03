@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>La Cocina del Flaco</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Actor&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header>
+            <div class="caja">
+                <h1 class="logo_lcsf"><img src="imagenes/logo_1.png" style="width: 15%;"></h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="hamburguesas.html">Hamburguesas</a></li>
+                        <li><a href="pizzas.html">Pizzas</a></li>
+                        <li><a href="bebidas.html">Bebidas</a></li>
+                        <!-- <li><a href="viandas.html">Viandas</a></li> -->
+                        <li><a href="administracion.html">Administración</a></li>
+                    </ul>
+                </nav> 
+            </div>
+        </header>
+
+        <main>
+            <h2 class="titulo_principal">Nuestras Pizzas!!</h2>
+            <ul class="producto">
+                <li>
+                    <h3 class="titulo_producto">Margarita</h3>
+                    <img class="imagen_producto" src="imagenes/pizzas/1-margarita.jpg">
+                    <p class="productoDescripcion">Las exquistas papas que acompañan todas tus hamburguesas. Papas horneadas.</p>
+                    <p class="productoPrecio">$ <span id="item401-span"></span></p>
+                </li>
+                <li>
+                    <h3 class="titulo_producto">Fugazza</h3>
+                    <img class="imagen_producto" src="imagenes/pizzas/2-fugazza.jpg">
+                    <p class="productoDescripcion">Nuestas exquisitas papas horneadas, con el agregado de este espectacular queso cheddar.</p>
+                    <p class="productoPrecio">$ <span id="item402-span"></span></p>
+                </li>
+                <li>
+                    <h3 class="titulo_producto">Napolitana</h3>
+                    <img class="imagen_producto" src="imagenes/pizzas/3-napolitana.jpg">
+                    <p class="productoDescripcion">A las papas con queso cheddar le agregamos trozos de panceta dorada y crujiente, como masticable que se te cayo en la arena.</p>
+                    <p class="productoPrecio">$ <span id="item403-span"></span></p>
+                </li>
+            </ul>
+        </main>
+        
+        
+        
+        
+        <script>
+            const formData = JSON.parse(localStorage.getItem('formData'));
+            const formDataDict = {};
+
+            for (const [key, value] of Object.entries(formData)) {
+              formDataDict[key] = value;
+            }
+
+        /*------------------------------Pizzas------------------------------*/
+
+            const item401Value = formDataDict.item401;
+            const item401Span = document.getElementById('item401-span');
+            item401Span.textContent = item401Value;
+
+            const item402Value = formDataDict.item402;
+            const item402Span = document.getElementById('item402-span');
+            item402Span.textContent = item402Value;
+
+            const item403Value = formDataDict.item403;
+            const item403Span = document.getElementById('item403-span');
+            item403Span.textContent = item403Value;
+        </script>
+
+
+
+
+        <footer>
+            <img class="imagen_footer" src="imagenes/logo_1.png">
+            <img class="imagen_footer" src="imagenes/logo_2.png">
+            <img class="imagen_footer" src="imagenes/logo_3.png">
+            <p class="copyright">Ana, Alejandro y su equipo de colaboradores te esperan!!!</p>
+        </footer>
+                
+    </body>
+
+</html>
